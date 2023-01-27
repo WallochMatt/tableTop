@@ -16,7 +16,7 @@ namespace tableTop
             roll = new Random();
         }
 
-        public static int Rolld20() 
+        public static int RollD20() 
         {
             int result = roll.Next(1, 21);
             return result;
@@ -24,11 +24,47 @@ namespace tableTop
 
         // Dice lower than d20 can be used for damage, and need to incorporate the amount of rolls
         // EX: 5d6 is the total of 5 times rolled d6s
-        public static int Rolld12(int timesToRoll = 1)
+        public static int RollD12(int timesToRoll = 1)
         {
             int result = 0;
             for (int i = 0; i < timesToRoll; i++)
                 result += roll.Next(1, 13);
+
+            return result;
+        }
+
+        public static int RollD10(int timesToRoll = 1)
+        {
+            int result = 0;
+            for (int i = 0; i < timesToRoll; i++)
+                result += roll.Next(1, 11);
+
+            return result;
+        }
+
+        public static int RollD8(int timesToRoll = 1)
+        {
+            int result = 0;
+            for (int i = 0; i < timesToRoll; i++)
+                result += roll.Next(1, 9);
+
+            return result;
+        }
+
+        public static int RollD6(int timesToRoll = 1)
+        {
+            int result = 0;
+            for (int i = 0; i < timesToRoll; i++)
+                result += roll.Next(1, 7);
+
+            return result;
+        }
+
+        public static int RollD4(int timesToRoll = 1)
+        {
+            int result = 0;
+            for (int i = 0; i < timesToRoll; i++)
+                result += roll.Next(1, 5);
 
             return result;
         }
