@@ -1,0 +1,15 @@
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\bin\Debug\net6.0\tableTop.exe
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\bin\Debug\net6.0\tableTop.deps.json
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\bin\Debug\net6.0\tableTop.runtimeconfig.json
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\bin\Debug\net6.0\tableTop.dll
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\bin\Debug\net6.0\tableTop.pdb
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.csproj.AssemblyReference.cache
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.AssemblyInfoInputs.cache
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.AssemblyInfo.cs
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.csproj.CoreCompileInputs.cache
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.dll
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\refint\tableTop.dll
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.pdb
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\tableTop.genruntimeconfig.cache
+C:\Users\skati\Documents\Continued_Learning\Day_3\tableTop\obj\Debug\net6.0\ref\tableTop.dll
