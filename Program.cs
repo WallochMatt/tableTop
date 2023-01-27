@@ -5,9 +5,9 @@ using tableTop;
 Creature test = new Creature(Dice.RollD12(3), 16);
 
 Creature goblin = new Creature(Dice.RollD12(2), 8);
-Console.WriteLine(goblin.health);
+Console.WriteLine("Goblin health: " + goblin.health);
 Console.ReadLine();
 
-test.attack(goblin, Dice.RollD10());
-Console.WriteLine(goblin.health);
+test.attack(goblin, Dice.RollD10(), true);
+Console.WriteLine("Goblin health: " + goblin.health);
 Console.ReadLine() ;    

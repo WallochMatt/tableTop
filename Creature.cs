@@ -8,9 +8,9 @@ namespace tableTop
 {
     internal class Creature
     {
-        //member variables
         public int health;
         public int armorClass;
+        //proficiency bonus
         //could add stats in the future
 
         //Use a dice roll method, which returns an int, for health
@@ -19,11 +19,22 @@ namespace tableTop
             this.health = health;
             this.armorClass = aromrClass;
         }
+
+
         //damage roll being a dice roll method 
-        public void attack(Creature creature, int damageRoll)
+        public void attack(Creature creature, int damageRoll, Boolean advantage = false)//damage roll can be weapon later
         {
-            if (creature.armorClass < Dice.RollD20())
+            int currentRoll = Dice.RollD20(advantage);
+            if (creature.armorClass < currentRoll)
+            { //+profeciency when applicable, may need weapon
+                if (currentRoll == 20)
+                {
+                    damageRoll = damageRoll * 2;
+                    Console.WriteLine("Critical hit!");
+                }
+                Console.WriteLine("Attack hits for: " + damageRoll);
                 creature.health = creature.health - damageRoll;
+            }
             else Console.WriteLine("The attack misses");
         }
     }

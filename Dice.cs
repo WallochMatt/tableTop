@@ -16,10 +16,20 @@ namespace tableTop
             roll = new Random();
         }
 
-        public static int RollD20() 
+        public static int RollD20(Boolean advantage = false) 
         {
             int result = roll.Next(1, 21);
-            return result;
+            Console.WriteLine("Roll is: " + result);
+            if (advantage == true)
+            {
+                int result2 = roll.Next(1, 21);
+                Console.WriteLine("Extra roll is: " + result2);
+                
+                if (result > result2) { return result; }
+                else return result2;
+            }
+            else return result;
+ 
         }
 
         // Dice lower than d20 can be used for damage, and need to incorporate the amount of rolls
