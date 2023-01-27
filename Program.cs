@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using tableTop;
 
-Console.WriteLine(Dice.RollD4(3));
+Creature test = new Creature(Dice.RollD12(3), 16);
+Console.WriteLine(test.health);
