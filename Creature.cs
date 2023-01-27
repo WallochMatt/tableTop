@@ -19,5 +19,12 @@ namespace tableTop
             this.health = health;
             this.armorClass = aromrClass;
         }
+        //damage roll being a dice roll method 
+        public void attack(Creature creature, int damageRoll)
+        {
+            if (creature.armorClass < Dice.RollD20())
+                creature.health = creature.health - damageRoll;
+            else Console.WriteLine("The attack misses");
+        }
     }
 }
