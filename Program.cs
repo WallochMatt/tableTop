@@ -2,12 +2,23 @@
 using tableTop;
 // note to self, create a weapon class
 
-Creature test = new Creature(Dice.RollD12(3), 16);
 
-Creature goblin = new Creature(Dice.RollD12(2), 8);
-Console.WriteLine("Goblin health: " + goblin.health);
+Dice d4 = new Dice(4);
+Dice d6 = new Dice(6);
+Dice d8 = new Dice(8);
+Dice d10 = new Dice(10);
+Dice d12 = new Dice(12);
+
+
+
+
+Creature tester = new Creature(10, 8);
+Creature punchingBag = new Creature(10, 8);
+
+Console.WriteLine("PB Health: " + punchingBag.health);
 Console.ReadLine();
 
-test.attack(goblin, Dice.RollD10(), true);
-Console.WriteLine("Goblin health: " + goblin.health);
-Console.ReadLine() ;    
+tester.attack(punchingBag, true);
+
+Console.WriteLine("PB Health: " + punchingBag.health);
+Console.ReadLine();
