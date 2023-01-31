@@ -11,7 +11,8 @@ namespace tableTop
         public int health;
         public int armorClass;
         public Weapon weapon;
-        //proficiency bonus
+        public int proficiencyBonus;
+    
         //could add stats in the future
 
         //Use a dice roll method, which returns an int, for health
@@ -20,32 +21,34 @@ namespace tableTop
             this.health = health;
             this.armorClass = aromrClass;
             this.weapon = weapon;
+            this.proficiencyBonus = 2;
         }
 
 
         public int performCheck(int valueToBeat, bool advantage = false)
         {
 
-            int actualValue = RandomNumberGenerator.Generate(20);
-            Console.WriteLine("Roll is: " + actualValue);
+            int initialValue = RandomNumberGenerator.Generate(20);
+            Console.WriteLine("Roll is: " + initialValue);
+
+            int actualValue = initialValue + proficiencyBonus;
+            Console.WriteLine("Plus  proficiency( " + proficiencyBonus + "): " + actualValue);
+
 
             if (advantage == true)
             {
                 int advantageValue = RandomNumberGenerator.Generate(20);
                 Console.WriteLine("Extra roll is: " + advantageValue);
-                if (actualValue >= advantageValue)
+                if (initialValue < advantageValue)
                 {
-                    actualValue += 0;
+                    initialValue = advantageValue;
                 }
-                else 
-                { 
-                    actualValue = advantageValue; 
-                };
-            }
+
+            };
             // ^^ Checks the in play roll when player has advantage
 
 
-            if ((valueToBeat < actualValue == true) && actualValue == 20)
+            if ((valueToBeat < actualValue == true) && initialValue == 20)
             {//if crit
                 return 2;
             }

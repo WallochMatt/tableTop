@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using tableTop;
-// note to self, create a weapon class
+// note to self: Could add stats, Could add levels
 
 
 Dice d4 = new Dice(4);
