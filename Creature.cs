@@ -10,18 +10,19 @@ namespace tableTop
     {
         public int health;
         public int armorClass;
-        //public Weapon weapon;
+        public Weapon weapon;
         //proficiency bonus
         //could add stats in the future
 
         //Use a dice roll method, which returns an int, for health
-        public Creature(int health, int aromrClass) 
+        public Creature(int health, int aromrClass, Weapon weapon)
         {
             this.health = health;
             this.armorClass = aromrClass;
+            this.weapon = weapon;
         }
 
- 
+
         public int performCheck(int valueToBeat, bool advantage = false)
         {
 
@@ -55,11 +56,15 @@ namespace tableTop
             else return 0;
         }
 
+        public Weapon GetWeapon()
+        {
+            return weapon;
+        }
 
-
-        public void attack(Creature creature, bool advantage = false)
+        public void Attack(Creature creature, Weapon attackerWeapon, bool advantage = false)
         {
             int checkResults = performCheck(creature.armorClass, advantage);
+            Weapon attackersWeapon = GetWeapon();
 
             switch (checkResults) 
             {
@@ -69,15 +74,13 @@ namespace tableTop
 
                 case 1:
                     Console.WriteLine("Hit"); 
-                    creature.health = creature.health - 1; //subtract weapon damage
+                    creature.health -= (attackersWeapon.rollForDamage());
                     break; 
                 
                 case 2:
                     Console.WriteLine("Critical Hit!");
-                    creature.health = creature.health - (1 * 2);// 1 is weapon damage placeholder
+                    creature.health -= (attackersWeapon.rollForDamage()) * 2;
                     break;
-
-                    //^^ Damage logic can be changed when Weapon is properly implemented
             }
         }
     }

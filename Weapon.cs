@@ -8,12 +8,20 @@ namespace tableTop
 {
     internal class Weapon
     {
+        public int diceCount;
         public Dice die;
 
-        public Weapon(Dice die) 
+        public Weapon(int diceCount, Dice die) 
         { 
+            this.diceCount = diceCount;
             this.die = die;
         }   
+
+        public int rollForDamage()
+        {
+            int totalDamage = die.Roll(diceCount);
+            return totalDamage;
+        }
 
     }
 }
