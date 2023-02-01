@@ -10,9 +10,9 @@ Dice d10 = new Dice(10);
 Dice d12 = new Dice(12);
 
 
-//                     rolls, Dice
-Weapon fists = new Weapon(2, d4);
-Weapon club = new Weapon(1, d6);
+//                     name, rolls, Dice
+Weapon fists = new Weapon("Unarmed", 2, d4);
+Weapon club = new Weapon("Wooden Club", 1, d6);
 
 
 
@@ -28,8 +28,13 @@ Armor chainMail = new Armor("Chain Mail", 55, 16);
 
 //                             hp,weapon,ac
 Creature tester = new Creature(10, club, 8);
-Creature punchingBag = new Creature(10, fists, chainMail.armorClass);
+Creature punchingBag = new Creature(10, fists, 2);
 
+Console.WriteLine("AC: " + punchingBag.ArmorClass);
+
+punchingBag.ArmorClass = chainMail.armorClass;
+
+Console.WriteLine("NEW AC: " + punchingBag.ArmorClass);
 
 
 
@@ -37,7 +42,8 @@ Console.WriteLine("PB Health: " + punchingBag.health);
 Console.ReadLine();
 
 //                 target, weapon for attack, advantageStatus
-tester.Attack(punchingBag, tester.GetWeapon(), true);
+tester.Attack(punchingBag, tester.Weapon, true);
+Console.WriteLine("Tester attacks with " + tester.Weapon.name);
 
 Console.WriteLine("PB Health: " + punchingBag.health);
 Console.ReadLine();

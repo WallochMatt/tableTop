@@ -8,11 +8,13 @@ namespace tableTop
 {
     internal class Weapon
     {
+        public string name;
         public int diceCount;
         public Dice die;
 
-        public Weapon(int diceCount, Dice die) 
+        public Weapon(string name, int diceCount, Dice die) 
         { 
+            this.name = name;
             this.diceCount = diceCount;
             this.die = die;
         }   

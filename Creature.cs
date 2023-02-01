@@ -9,8 +9,19 @@ namespace tableTop
     internal class Creature
     {
         public int health;
-        public int armorClass;
-        public Weapon weapon;
+
+        private int armorClass;
+        public int ArmorClass
+        { 
+            get { return armorClass; } 
+            set { armorClass = value; }
+        }
+        private Weapon weapon;
+        public Weapon Weapon 
+        {
+            get { return weapon; }
+            set { weapon = value; }
+        }
         public int proficiencyBonus;
     
         //could add stats in the future
@@ -61,15 +72,15 @@ namespace tableTop
             else return 0;
         }
 
-        public Weapon GetWeapon()
-        {
-            return weapon;
-        }
+        //public Weapon GetWeapon()
+        //{
+        //    return weapon;
+        //}
 
-        public void Attack(Creature creature, Weapon attackerWeapon, bool advantage = false)
+        public void Attack(Creature target, Weapon attackerWeapon, bool advantage = false)
         {
-            int checkResults = performCheck(creature.armorClass, advantage);
-            Weapon attackersWeapon = GetWeapon();
+            int checkResults = performCheck(target.armorClass, advantage);
+            Weapon attackersWeapon = Weapon;
 
             switch (checkResults) 
             {
@@ -79,14 +90,20 @@ namespace tableTop
 
                 case 1:
                     Console.WriteLine("Hit"); 
-                    creature.health -= (attackersWeapon.rollForDamage());
+                    target.health -= (attackersWeapon.rollForDamage());
                     break; 
                 
                 case 2:
                     Console.WriteLine("Critical Hit!");
-                    creature.health -= (attackersWeapon.rollForDamage()) * 2;
+                    target.health -= (attackersWeapon.rollForDamage()) * 2;
                     break;
             }
+        }
+
+        
+        public void donArmor(Armor armor) 
+        {
+            ArmorClass = armor.armorClass;
         }
     }
 }
