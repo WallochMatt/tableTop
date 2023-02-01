@@ -16,11 +16,12 @@ namespace tableTop
         //could add stats in the future
 
         //Use a dice roll method, which returns an int, for health
-        public Creature(int health, int aromrClass, Weapon weapon)
+        public Creature(int health, Weapon weapon, int aromrClass = 8)
         {
             this.health = health;
-            this.armorClass = aromrClass;
+            
             this.weapon = weapon;
+            this.armorClass = aromrClass;
             this.proficiencyBonus = 2;
         }
 
@@ -31,21 +32,22 @@ namespace tableTop
             int initialValue = RandomNumberGenerator.Generate(20);
             Console.WriteLine("Roll is: " + initialValue);
 
-            int actualValue = initialValue + proficiencyBonus;
-            Console.WriteLine("Plus  proficiency( " + proficiencyBonus + "): " + actualValue);
 
 
             if (advantage == true)
             {
                 int advantageValue = RandomNumberGenerator.Generate(20);
                 Console.WriteLine("Extra roll is: " + advantageValue);
-                if (initialValue < advantageValue)
+                if (initialValue <= advantageValue)
                 {
                     initialValue = advantageValue;
                 }
 
             };
             // ^^ Checks the in play roll when player has advantage
+
+            int actualValue = initialValue + proficiencyBonus;
+            Console.WriteLine("Plus  proficiency( " + proficiencyBonus + "): " + actualValue);
 
 
             if ((valueToBeat < actualValue == true) && initialValue == 20)
