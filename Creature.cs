@@ -8,7 +8,10 @@ namespace tableTop
 {
     internal class Creature
     {
+        private string name;
+        //pub int level
         public int health;
+        //race
 
         private int armorClass;
         public int ArmorClass
@@ -23,16 +26,62 @@ namespace tableTop
             set { weapon = value; }
         }
         public int proficiencyBonus;
-    
-        //could add stats in the future
+
+   
+        private int strength;
+        public int Strength
+        {
+            get { return strength; }
+            set { strength = value; }   
+        }
+
+        private int dexterity;
+        public int Dexterity
+        {
+            get { return dexterity; }
+            set { dexterity = value; }
+        }
+        private int constitution;
+        public int Constitution
+        {
+            get { return constitution; }
+            set { constitution = value; }
+        }
+        private int intelligence;
+        public int Intelligence
+        {
+            get { return intelligence; }
+            set { intelligence = value; }
+        }
+        private int wisdom;
+        public int Wisdom
+        {
+            get { return wisdom; }
+            set { wisdom = value; }
+        }
+        private int charisma;
+        public int Charisma
+        {
+            get { return charisma; }
+            set { charisma = value; }
+        }
+
 
         //Use a dice roll method, which returns an int, for health
-        public Creature(int health, Weapon weapon, int aromrClass = 8)
+        public Creature(string name, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int health, Weapon weapon, int aromrClass = 8)
         {
+            this.name = name;   
+            this.strength = strength;
+            this.dexterity= dexterity;
+            this.constitution= constitution;
+            this.intelligence= intelligence;
+            this.wisdom= wisdom;
+            this.charisma= charisma;
             this.health = health;
-            
+
             this.weapon = weapon;
             this.armorClass = aromrClass;
+
             this.proficiencyBonus = 2;
         }
 
@@ -101,9 +150,43 @@ namespace tableTop
         }
 
         
-        public void donArmor(Armor armor) 
+        public void DonArmor(Armor armor) 
         {
             ArmorClass = armor.armorClass;
         }
+
+        public void DoffArmor() 
+        {
+            ArmorClass = 2;
+        }
+
+
+        //Level up method: Increase level by one,
+        // Increase health by a hit die and add CON modifier
+        //allow user to increase stats on ASI
+
+        //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
+        public static void PrintCharacterSheet(Creature character) 
+        {
+            Console.WriteLine("Name: " + character.name);
+            Console.WriteLine("Health: " + character.health);
+            Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);
+
+            Console.WriteLine("AC: " + character.ArmorClass);
+            Console.WriteLine("Weapon: " + character.Weapon.name + " - Damage: " + character.Weapon.diceCount + "d" +character.Weapon.die.numOfSides);
+
+
+            Console.WriteLine("Strength: " + character.strength);
+            Console.WriteLine("Dexterity: " + character.dexterity);
+            Console.WriteLine("Constitution: " + character.constitution);
+            Console.WriteLine("Intelligence: " + character.intelligence);
+            Console.WriteLine("Wisdom: " + character.wisdom);
+            Console.WriteLine("Charisma: " + character.charisma);
+
+        }
+
+
     }
+
+
 }

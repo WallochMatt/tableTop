@@ -21,8 +21,6 @@ namespace tableTop
             this.armorClass = armorClass;   
         }
 
-        //don and doff armor? Or shiuld that be a creature method
-
 
     }
 }
