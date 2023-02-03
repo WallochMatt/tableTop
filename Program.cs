@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using tableTop;
 // note to self: Could add stats, Could add levels
+// a FEATS CLASS
 
 
 Dice d4 = new Dice(4);
@@ -22,14 +23,14 @@ Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex
 
 
 
-
+Race dwarf = new Race("Dwarf", 25, true, "Artisan's Tools", new string[] {"Common", "Dwarvish"});
 
 
 
 
 //                             name  str  dex  con int wis cha hp weapon ac
-Creature tester = new Creature("Test", 14, 14, 14, 10, 10, 10, 10, club, 8);
-Creature punchingBag = new Creature("Punching Bag", 10, 10, 10, 10, 10, 10, 10, fists, 2);
+Creature tester = new Creature("Test", dwarf, 14, 14, 14, 10, 10, 10, 10, club, 8);
+Creature punchingBag = new Creature("Punching Bag", dwarf, 10, 10, 10, 10, 10, 10, 10, fists, 2);
 
 //Console.WriteLine("AC: " + punchingBag.ArmorClass);
 

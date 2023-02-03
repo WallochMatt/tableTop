@@ -12,6 +12,12 @@ namespace tableTop
         //pub int level
         public int health;
         //race
+        private Race race;
+        public Race Race
+        { 
+            get { return race; }
+            set { race = value; }
+        }
 
         private int armorClass;
         public int ArmorClass
@@ -32,7 +38,7 @@ namespace tableTop
         public int Strength
         {
             get { return strength; }
-            set { strength = value; }   
+            set { strength += value; }   
         }
 
         private int dexterity;
@@ -68,10 +74,12 @@ namespace tableTop
 
 
         //Use a dice roll method, which returns an int, for health
-        public Creature(string name, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int health, Weapon weapon, int aromrClass = 8)
+        public Creature(string name, Race race, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int health, Weapon weapon, int aromrClass = 8)
         {
-            this.name = name;   
-            this.strength = strength;
+            this.name = name;  
+            this.race = race;
+
+            this.strength += strength;
             this.dexterity= dexterity;
             this.constitution= constitution;
             this.intelligence= intelligence;
@@ -121,10 +129,6 @@ namespace tableTop
             else return 0;
         }
 
-        //public Weapon GetWeapon()
-        //{
-        //    return weapon;
-        //}
 
         public void Attack(Creature target, Weapon attackerWeapon, bool advantage = false)
         {
@@ -169,6 +173,9 @@ namespace tableTop
         public static void PrintCharacterSheet(Creature character) 
         {
             Console.WriteLine("Name: " + character.name);
+            Console.WriteLine("Race: " + character.race.name);
+            Console.WriteLine("Languages: " + character.race.languages);
+
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);
 
