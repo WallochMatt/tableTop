@@ -174,7 +174,10 @@ namespace tableTop
         {
             Console.WriteLine("Name: " + character.name);
             Console.WriteLine("Race: " + character.race.name);
-            Console.WriteLine("Languages: " + character.race.languages);
+
+            Console.WriteLine("Languages: " + String.Join(", ", character.race.languages));
+            //Array.ForEach(character.race.languages, Console.WriteLine);
+           
 
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);

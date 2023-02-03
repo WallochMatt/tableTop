@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using tableTop;
-// note to self: Could add stats, Could add levels
+// note to self: Could add levels
 // a FEATS CLASS
 
 
