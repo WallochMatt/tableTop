@@ -23,7 +23,7 @@ Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex
 
 
 
-Race dwarf = new Race("Dwarf", 25, true, "Artisan's Tools", new string[] {"Common", "Dwarvish"});
+Race dwarf = new Race("Dwarf", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"});
 
 
 

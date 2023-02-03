@@ -11,6 +11,13 @@ namespace tableTop
         private string name;
         //pub int level
         public int health;
+
+        private List<string> languages = new List<string> ();
+        public List<string> Languages
+        {
+            get { return languages; }
+            set { languages.AddRange(value); }
+        }
         //race
         private Race race;
         public Race Race
@@ -78,7 +85,6 @@ namespace tableTop
         {
             this.name = name;  
             this.race = race;
-
             this.strength += strength;
             this.dexterity= dexterity;
             this.constitution= constitution;
@@ -91,6 +97,7 @@ namespace tableTop
             this.armorClass = aromrClass;
 
             this.proficiencyBonus = 2;
+            Languages = race.raceLanguages;
         }
 
 
@@ -132,7 +139,7 @@ namespace tableTop
 
         public void Attack(Creature target, Weapon attackerWeapon, bool advantage = false)
         {
-            int checkResults = performCheck(target.armorClass, advantage);
+            int checkResults = performCheck(target.ArmorClass, advantage);
             Weapon attackersWeapon = Weapon;
 
             switch (checkResults) 
@@ -175,9 +182,10 @@ namespace tableTop
             Console.WriteLine("Name: " + character.name);
             Console.WriteLine("Race: " + character.race.name);
 
-            Console.WriteLine("Languages: " + String.Join(", ", character.race.languages));
+            //Console.WriteLine("Languages: " + character.languages);
+            Console.WriteLine("Languages: " + String.Join(", ", character.languages));
             //Array.ForEach(character.race.languages, Console.WriteLine);
-           
+
 
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);

@@ -18,15 +18,16 @@ namespace tableTop
 
         private string toolProf; // Tool class needed
 
-        public string[] languages;
+        public List<string> raceLanguages;
 
-        public Race(string name, int speed, bool darkvision, string toolProf, string[] languages) 
+        public Race(string name, int speed, bool darkvision, string toolProf, List<string> raceLanguages) 
         {
             this.name = name;
             this.speed = speed;
             this.darkvision = darkvision;
             this.toolProf = toolProf;   
-            this.languages = languages;
+            this.raceLanguages = raceLanguages;
+
 
         }
 
