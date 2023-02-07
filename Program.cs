@@ -12,8 +12,8 @@ Dice d12 = new Dice(12);
 
 
 //                          name, rolls, Dice
-Weapon fists = new Weapon("Unarmed", 2, d4);
-Weapon club = new Weapon("Wooden Club", 1, d6);
+//Weapon fists = new Weapon("Unarmed", d4, 0);
+Weapon club = new Weapon("Wooden Club", 1, 8);
 
 
 
@@ -25,29 +25,13 @@ Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex
 
 Race dwarf = new Race("Dwarf", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"});
 
+//                               name  hp           languages                str dex con int wis cha ac
 
 
 
-//                             name  str  dex  con int wis cha hp weapon ac
-Creature tester = new Creature("Test", dwarf, 14, 14, 14, 10, 10, 10, 10, club, 8);
-Creature punchingBag = new Creature("Punching Bag", dwarf, 10, 10, 10, 10, 10, 10, 10, fists, 2);
+Goblin testGob = new Goblin("test");
+Goblin pb = new Goblin("pb");
+testGob.ScimtiarAttack(pb);
 
-//Console.WriteLine("AC: " + punchingBag.ArmorClass);
-
-//punchingBag.DonArmor(studLeath);
-
-//Console.WriteLine("NEW AC: " + punchingBag.ArmorClass);
-
-
-
-//Console.WriteLine("PB Health: " + punchingBag.health);
-//Console.ReadLine();
-
-////                 target, weapon for attack, advantageStatus
-//tester.Attack(punchingBag, tester.Weapon, true);
-//Console.WriteLine("Tester attacks with " + tester.Weapon.name);
-
-//Console.WriteLine("PB Health: " + punchingBag.health);
-//Console.ReadLine();
-
-Creature.PrintCharacterSheet(tester);
+Console.WriteLine(pb.Health);
+Console.ReadLine();

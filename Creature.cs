@@ -6,73 +6,78 @@ using System.Threading.Tasks;
 
 namespace tableTop
 {
-    internal class Creature
+    abstract class Creature
     {
-        private string name;
-        //pub int level
-        public int health;
+        protected string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
-        private List<string> languages = new List<string> ();
+        //pub int level
+        protected int health;
+        public int Health
+        {
+            get {return health;}
+            set { health = value;}
+        }
+
+        protected List<string> languages = new List<string> ();
         public List<string> Languages
         {
             get { return languages; }
             set { languages.AddRange(value); }
         }
-        //race
-        private Race race;
-        public Race Race
-        { 
-            get { return race; }
-            set { race = value; }
-        }
 
-        private int armorClass;
+        protected int armorClass;
         public int ArmorClass
         { 
             get { return armorClass; } 
             set { armorClass = value; }
         }
-        private Weapon weapon;
-        public Weapon Weapon 
-        {
-            get { return weapon; }
-            set { weapon = value; }
-        }
+
+
+
         public int proficiencyBonus;
 
-   
-        private int strength;
+
+
+
+
+
+        protected int strength;
         public int Strength
         {
             get { return strength; }
             set { strength += value; }   
         }
 
-        private int dexterity;
+        protected int dexterity;
         public int Dexterity
         {
             get { return dexterity; }
             set { dexterity = value; }
         }
-        private int constitution;
+        protected int constitution;
         public int Constitution
         {
             get { return constitution; }
             set { constitution = value; }
         }
-        private int intelligence;
+        protected int intelligence;
         public int Intelligence
         {
             get { return intelligence; }
             set { intelligence = value; }
         }
-        private int wisdom;
+        protected int wisdom;
         public int Wisdom
         {
             get { return wisdom; }
             set { wisdom = value; }
         }
-        private int charisma;
+        protected int charisma;
         public int Charisma
         {
             get { return charisma; }
@@ -80,27 +85,7 @@ namespace tableTop
         }
 
 
-        //Use a dice roll method, which returns an int, for health
-        public Creature(string name, Race race, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int health, Weapon weapon, int aromrClass = 8)
-        {
-            this.name = name;  
-            this.race = race;
-            this.strength += strength;
-            this.dexterity= dexterity;
-            this.constitution= constitution;
-            this.intelligence= intelligence;
-            this.wisdom= wisdom;
-            this.charisma= charisma;
-            this.health = health;
-
-            this.weapon = weapon;
-            this.armorClass = aromrClass;
-
-            this.proficiencyBonus = 2;
-            Languages = race.raceLanguages;
-        }
-
-
+        //static method instead???
         public int performCheck(int valueToBeat, bool advantage = false)
         {
 
@@ -137,39 +122,39 @@ namespace tableTop
         }
 
 
-        public void Attack(Creature target, Weapon attackerWeapon, bool advantage = false)
-        {
-            int checkResults = performCheck(target.ArmorClass, advantage);
-            Weapon attackersWeapon = Weapon;
+        //public virtual void Attack(Creature target, Weapon attackerWeapon, bool advantage = false)
+        //{
+        //    int checkResults = performCheck(target.ArmorClass, advantage);
+        //    Weapon attackersWeapon = Weapon;
 
-            switch (checkResults) 
-            {
-                case 0:
-                    Console.WriteLine("Miss");
-                    break;
+        //    switch (checkResults)
+        //    {
+        //        case 0:
+        //            Console.WriteLine("Miss");
+        //            break;
 
-                case 1:
-                    Console.WriteLine("Hit"); 
-                    target.health -= (attackersWeapon.rollForDamage());
-                    break; 
-                
-                case 2:
-                    Console.WriteLine("Critical Hit!");
-                    target.health -= (attackersWeapon.rollForDamage()) * 2;
-                    break;
-            }
-        }
+        //        case 1:
+        //            Console.WriteLine("Hit");
+        //            target.health -= (attackersWeapon.rollForDamage());
+        //            break;
 
-        
-        public void DonArmor(Armor armor) 
-        {
-            ArmorClass = armor.armorClass;
-        }
+        //        case 2:
+        //            Console.WriteLine("Critical Hit!");
+        //            target.health -= (attackersWeapon.rollForDamage()) * 2;
+        //            break;
+        //    }
+        //}
 
-        public void DoffArmor() 
-        {
-            ArmorClass = 2;
-        }
+
+        //public void DonArmor(Armor armor) 
+        //{
+        //    ArmorClass = armor.armorClass;
+        //}
+
+        //public void DoffArmor() 
+        //{
+        //    ArmorClass = 2;
+        //}
 
 
         //Level up method: Increase level by one,
@@ -179,21 +164,16 @@ namespace tableTop
         //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
         public static void PrintCharacterSheet(Creature character) 
         {
-            Console.WriteLine("Name: " + character.name);
-            Console.WriteLine("Race: " + character.race.name);
+            //Console.WriteLine("Name: " + character.name);
 
             //Console.WriteLine("Languages: " + character.languages);
             Console.WriteLine("Languages: " + String.Join(", ", character.languages));
             //Array.ForEach(character.race.languages, Console.WriteLine);
-
-
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);
 
             Console.WriteLine("AC: " + character.ArmorClass);
-            Console.WriteLine("Weapon: " + character.Weapon.name + " - Damage: " + character.Weapon.diceCount + "d" +character.Weapon.die.numOfSides);
-
-
+            
             Console.WriteLine("Strength: " + character.strength);
             Console.WriteLine("Dexterity: " + character.dexterity);
             Console.WriteLine("Constitution: " + character.constitution);

@@ -10,7 +10,7 @@ namespace tableTop
     internal class Race
     {
         //Still need to figure out how to add the bonus stats of a Race to a Creature
-        public string name;
+        private string nameOfRace;
         
         private int speed;
 
@@ -20,15 +20,13 @@ namespace tableTop
 
         public List<string> raceLanguages;
 
-        public Race(string name, int speed, bool darkvision, string toolProf, List<string> raceLanguages) 
+        public Race(string nameOfRace, int speed, bool darkvision, string toolProf, List<string> raceLanguages) 
         {
-            this.name = name;
+            this.nameOfRace = nameOfRace;
             this.speed = speed;
             this.darkvision = darkvision;
             this.toolProf = toolProf;   
             this.raceLanguages = raceLanguages;
-
-
         }
 
 

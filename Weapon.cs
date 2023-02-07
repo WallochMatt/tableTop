@@ -8,20 +8,22 @@ namespace tableTop
 {
     internal class Weapon
     {
-        public string name;
+        private string nameOfWeapon;
         public int diceCount;
-        public Dice die;
+        public int dieSize;
 
-        public Weapon(string name, int diceCount, Dice die) 
+        public Weapon(string nameOfWeapon, int diceCount, int dieSize) 
         { 
-            this.name = name;
+            this.nameOfWeapon = nameOfWeapon;
             this.diceCount = diceCount;
-            this.die = die;
+            this.dieSize = dieSize;
         }   
 
         public int rollForDamage()
         {
-            int totalDamage = die.Roll(diceCount);
+            int totalDamage = 0;
+            for (int i = 0; i < diceCount; i++)
+                totalDamage += RandomNumberGenerator.Generate(dieSize);
             return totalDamage;
         }
 

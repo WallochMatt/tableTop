@@ -8,15 +8,15 @@ namespace tableTop
 {
     internal class Armor
     {
-        public string name;
+        private string nameOfArmor;
         public int weight;
         public int armorClass;
         //price
         //stealth
 
-        public Armor(string name,int weight, int armorClass)
+        public Armor(string nameOfArmor,int weight, int armorClass)
         {
-            this.name = name;
+            this.nameOfArmor = nameOfArmor;
             this.weight = weight;
             this.armorClass = armorClass;   
         }
