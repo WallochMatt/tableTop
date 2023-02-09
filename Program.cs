@@ -22,8 +22,8 @@ Armor chainMail = new Armor("Chain Mail", 55, 16);
 Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex modifier
 
 
-
-Race dwarf = new Race("Dwarf", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"});
+MountainDwarf testDwarf = new MountainDwarf();
+Console.WriteLine(testDwarf.ToString());
 
 //                               name  hp           languages                str dex con int wis cha ac
 

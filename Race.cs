@@ -7,27 +7,20 @@ using System.Threading.Tasks;
 
 namespace tableTop
 {
-    internal class Race
+    abstract class Race
     {
         //Still need to figure out how to add the bonus stats of a Race to a Creature
-        private string nameOfRace;
+        protected string nameOfRace;
+
+        protected string size;
         
-        private int speed;
+        protected int speed;
 
-        private bool darkvision;
+        protected bool darkvision;
 
-        private string toolProf; // Tool class needed
+        protected string toolProf; // Tool class needed
 
-        public List<string> raceLanguages;
-
-        public Race(string nameOfRace, int speed, bool darkvision, string toolProf, List<string> raceLanguages) 
-        {
-            this.nameOfRace = nameOfRace;
-            this.speed = speed;
-            this.darkvision = darkvision;
-            this.toolProf = toolProf;   
-            this.raceLanguages = raceLanguages;
-        }
+        protected List<string> raceLanguages;
 
 
     }
