@@ -11,6 +11,7 @@ namespace tableTop
         Weapon scimitar = new Weapon("Scimitar", 1, 6);
         Weapon shortbow = new Weapon("Short Bow", 1, 6);
         double challengeRating;
+  
 
         public Goblin(string name) 
         {
@@ -26,6 +27,7 @@ namespace tableTop
             armorClass = 15;
             proficiencyBonus = 2;
             challengeRating = .25;
+            dexSave= 2;
 
         }
 

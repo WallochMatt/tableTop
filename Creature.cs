@@ -8,6 +8,10 @@ namespace tableTop
 {
     abstract class Creature
     {
+
+        public int dexSave;
+
+
         protected string name;
         public string Name
         {

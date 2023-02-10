@@ -27,6 +27,6 @@ Goblin pb = new Goblin("pb");
 
 YoungRedDragon dw = new YoungRedDragon("Donkey's Wife");
 
-//Console.WriteLine("Punching Bag Health: " + pb.Health);
-Creature.PrintCharacterSheet(dw);
+dw.Breath(testGob);
+Console.WriteLine("Goblin's hp: " + testGob.Health);
 Console.ReadLine();

@@ -53,5 +53,63 @@ namespace tableTop
                     break;
             }
         }
+
+
+        public virtual void Claw(Creature target, bool advantage = false)
+
+        {
+            int checkResults = performCheck(target.ArmorClass, 10, advantage);
+            int damageDealt = (claw.rollForDamage() + 6);
+
+            switch (checkResults) // DRY: Consider making this a function, it should work with any attack
+            {
+                case 0:
+                    Console.WriteLine("Miss");
+                    break;
+
+                case 1:
+                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
+                    target.Health -= damageDealt;
+                    break;
+
+                case 2:
+                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
+                    target.Health -= damageDealt * 2;
+                    break;
+            }
+        }
+
+        public virtual void Breath(Creature target, bool advantage = false)
+
+        {
+
+            int damageDealt;
+            int checkResults = performCheck(0, 0, advantage);
+            int saveStatus = target.dexSave + RandomNumberGenerator.Generate(20); ;
+            if (saveStatus > 17) 
+            {
+                damageDealt = (breath.rollForDamage() / 2);
+            }
+            else { damageDealt = breath.rollForDamage(); }
+
+                
+
+            switch (checkResults) // DRY: Consider making this a function, it should work with any attack
+            {
+                case 0:
+                    Console.WriteLine("Miss");
+                    break;
+
+                case 1:
+                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
+                    target.Health -= damageDealt;
+                    break;
+
+                case 2:
+                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
+                    target.Health -= damageDealt * 2;
+                    break;
+            }
+        }
     }
 }
