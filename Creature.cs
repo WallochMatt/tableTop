@@ -86,12 +86,12 @@ namespace tableTop
 
 
         //static method instead???
-        public int performCheck(int valueToBeat, bool advantage = false)
+        public int performCheck(int valueToBeat, int toHitBonus = 0, bool advantage = false)
         {
 
             int initialValue = RandomNumberGenerator.Generate(20);
             Console.WriteLine("Roll is: " + initialValue);
-
+            
 
 
             if (advantage == true)
@@ -106,7 +106,7 @@ namespace tableTop
             };
             // ^^ Checks the in play roll when player has advantage
 
-            int actualValue = initialValue + proficiencyBonus;
+            int actualValue = initialValue + proficiencyBonus + toHitBonus;
             Console.WriteLine("Plus  proficiency( " + proficiencyBonus + "): " + actualValue);
 
 

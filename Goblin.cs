@@ -32,7 +32,7 @@ namespace tableTop
         public virtual void ScimtiarAttack(Creature target, bool advantage = false)
 
         {
-            int checkResults = performCheck(target.ArmorClass, advantage);
+            int checkResults = performCheck(target.ArmorClass, 4, advantage);
 
             switch (checkResults)
             {
