@@ -14,8 +14,6 @@ Dice d12 = new Dice(12);
 //                          name, rolls, Dice
 Weapon club = new Weapon("Wooden Club", 1, 8);
 
-
-
 //                               name, weight, ac
 Armor chainMail = new Armor("Chain Mail", 55, 16);
 Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex modifier
@@ -26,8 +24,9 @@ MountainDwarf testDwarf = new MountainDwarf();
 
 Goblin testGob = new Goblin("test");
 Goblin pb = new Goblin("pb");
-//testGob.BowAttack(pb);
+
+YoungRedDragon dw = new YoungRedDragon("Donkey's Wife");
 
 //Console.WriteLine("Punching Bag Health: " + pb.Health);
-Creature.PrintCharacterSheet(testGob);
+Creature.PrintCharacterSheet(dw);
 Console.ReadLine();
