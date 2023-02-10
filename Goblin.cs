@@ -9,7 +9,7 @@ namespace tableTop
     internal class Goblin : Creature
     {
         Weapon scimitar = new Weapon("Scimitar", 1, 6);
-        //Same for bow
+        Weapon shortbow = new Weapon("Short Bow", 1, 6);
 
         public Goblin(string name) 
         {
@@ -25,14 +25,13 @@ namespace tableTop
             armorClass = 15;
             proficiencyBonus = 2;
 
-     
-            //Weapon bow = new Weapon();
         }
 
         public virtual void ScimtiarAttack(Creature target, bool advantage = false)
 
         {
             int checkResults = performCheck(target.ArmorClass, 4, advantage);
+            int damageDealt = (scimitar.rollForDamage() + 2);
 
             switch (checkResults)
             {
@@ -41,13 +40,38 @@ namespace tableTop
                     break;
 
                 case 1:
-                    Console.WriteLine("Hit");
-                    target.Health -= (scimitar.rollForDamage());
+                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
+                    target.Health -= damageDealt;
                     break;
 
                 case 2:
-                    Console.WriteLine("Critical Hit!");
-                    target.Health -= (scimitar.rollForDamage()) * 2;
+                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
+                    target.Health -= damageDealt * 2;
+                    break;
+            }
+        }
+
+
+        public virtual void BowAttack(Creature target, bool advantage = false)
+
+        {
+            int checkResults = performCheck(target.ArmorClass, 4, advantage);
+            int damageDealt = (shortbow.rollForDamage() + 2);
+
+            switch (checkResults)
+            {
+                case 0:
+                    Console.WriteLine("Miss");
+                    break;
+
+                case 1:
+                    Console.WriteLine("Hit: " + damageDealt);
+                    target.Health -= damageDealt;
+                    break;
+
+                case 2:
+                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2));
+                    target.Health -= damageDealt * 2;
                     break;
             }
         }

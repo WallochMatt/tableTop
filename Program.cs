@@ -26,7 +26,7 @@ MountainDwarf testDwarf = new MountainDwarf();
 
 Goblin testGob = new Goblin("test");
 Goblin pb = new Goblin("pb");
-testGob.ScimtiarAttack(pb);
+testGob.BowAttack(pb);
 
 Console.WriteLine("Punching Bag Health: " + pb.Health);
 Console.ReadLine();
