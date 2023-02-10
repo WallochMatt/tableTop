@@ -5,7 +5,7 @@ using tableTop;
 
 
 Dice d4 = new Dice(4);
-Dice d6 = new Dice(6);               //Remaining HP ->
+Dice d6 = new Dice(6);
 Dice d8 = new Dice(8);
 Dice d10 = new Dice(10);
 Dice d12 = new Dice(12);
@@ -26,7 +26,8 @@ MountainDwarf testDwarf = new MountainDwarf();
 
 Goblin testGob = new Goblin("test");
 Goblin pb = new Goblin("pb");
-testGob.BowAttack(pb);
+//testGob.BowAttack(pb);
 
-Console.WriteLine("Punching Bag Health: " + pb.Health);
+//Console.WriteLine("Punching Bag Health: " + pb.Health);
+Creature.PrintCharacterSheet(testGob);
 Console.ReadLine();

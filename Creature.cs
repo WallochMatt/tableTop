@@ -38,12 +38,7 @@ namespace tableTop
         }
 
 
-
         public int proficiencyBonus;
-
-
-
-
 
 
         protected int strength;
@@ -92,7 +87,6 @@ namespace tableTop
             int initialValue = RandomNumberGenerator.Generate(20);
             Console.WriteLine("Roll is: " + initialValue);
             
-
 
             if (advantage == true)
             {
@@ -164,27 +158,19 @@ namespace tableTop
         //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
         public static void PrintCharacterSheet(Creature character) 
         {
-            //Console.WriteLine("Name: " + character.name);
-
-            //Console.WriteLine("Languages: " + character.languages);
+            Console.WriteLine("Name: " + character.name);
             Console.WriteLine("Languages: " + String.Join(", ", character.languages));
-            //Array.ForEach(character.race.languages, Console.WriteLine);
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);
-
             Console.WriteLine("AC: " + character.ArmorClass);
-            
             Console.WriteLine("Strength: " + character.strength);
             Console.WriteLine("Dexterity: " + character.dexterity);
             Console.WriteLine("Constitution: " + character.constitution);
             Console.WriteLine("Intelligence: " + character.intelligence);
             Console.WriteLine("Wisdom: " + character.wisdom);
             Console.WriteLine("Charisma: " + character.charisma);
-
         }
 
-
     }
-
 
 }

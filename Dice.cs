@@ -10,7 +10,6 @@ namespace tableTop
     {
         public int numOfSides;
 
-
         public Dice(int numOfSides) 
         {
             this.numOfSides = numOfSides;

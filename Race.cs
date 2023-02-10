@@ -21,7 +21,5 @@ namespace tableTop
         protected string toolProf; // Tool class needed
 
         protected List<string> raceLanguages;
-
-
     }
 }
