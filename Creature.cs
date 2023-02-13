@@ -119,11 +119,6 @@ namespace tableTop
             else return 0;
         }
 
-
-        //public virtual void Attack(Creature target, Weapon attackerWeapon, bool advantage = false)
-        //{
-        //    int checkResults = performCheck(target.ArmorClass, advantage);
-        //    Weapon attackersWeapon = Weapon;
         public virtual void runResult(int checkResults, int damageDealt, Creature target)
         {
             switch (checkResults)
@@ -144,7 +139,19 @@ namespace tableTop
             }
         }
 
-    //}
+        // Damage calculated in the respective attack method
+        public virtual int SavingThrow(int saveStat) 
+        {
+            int saveStatus = saveStat + RandomNumberGenerator.Generate(20);
+            if (saveStatus > 17)
+            {
+                return 2; //take half damage
+            }
+            else { return 1; } //take full damage
+        }
+
+
+
 
 
     //public void DonArmor(Armor armor) 

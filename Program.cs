@@ -32,6 +32,6 @@ Console.WriteLine("Dragon's hp: " + dw.Health);
 Console.ReadLine();
 
 
-dw.Claw(testGob);
+dw.Breath(testGob);
 Console.WriteLine("Goblin's hp: " + testGob.Health);
 Console.ReadLine();

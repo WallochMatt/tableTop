@@ -50,17 +50,9 @@ namespace tableTop
         public virtual void Breath(Creature target, bool advantage = false)
 
         {
-
-            int damageDealt;
-            int checkResults = performCheck(0, 0, advantage);
-            int saveStatus = target.dexSave + RandomNumberGenerator.Generate(20); ;
-            if (saveStatus > 17) 
-            {
-                damageDealt = (breath.rollForDamage() / 2);
-            }
-            else { damageDealt = breath.rollForDamage(); }
-
-            runResult(checkResults, damageDealt, target);
+            int savingThrowResult = SavingThrow(target.dexSave);
+            int damageDealt = breath.rollForDamage() / savingThrowResult;
+            runResult(1, damageDealt, target);
         }
     }
 }
