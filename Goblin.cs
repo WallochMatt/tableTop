@@ -36,23 +36,7 @@ namespace tableTop
         {
             int checkResults = performCheck(target.ArmorClass, 4, advantage);
             int damageDealt = (scimitar.rollForDamage() + 2);
-
-            switch (checkResults)
-            {
-                case 0:
-                    Console.WriteLine("Miss");
-                    break;
-
-                case 1:
-                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
-                    target.Health -= damageDealt;
-                    break;
-
-                case 2:
-                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
-                    target.Health -= damageDealt * 2;
-                    break;
-            }
+            runResult(checkResults, damageDealt, target);
         }
 
 
@@ -61,23 +45,7 @@ namespace tableTop
         {
             int checkResults = performCheck(target.ArmorClass, 4, advantage);
             int damageDealt = (shortbow.rollForDamage() + 2);
-
-            switch (checkResults)
-            {
-                case 0:
-                    Console.WriteLine("Miss");
-                    break;
-
-                case 1:
-                    Console.WriteLine("Hit: " + damageDealt);
-                    target.Health -= damageDealt;
-                    break;
-
-                case 2:
-                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2));
-                    target.Health -= damageDealt * 2;
-                    break;
-            }
+            runResult(checkResults, damageDealt, target);
         }
 
     }

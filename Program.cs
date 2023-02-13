@@ -27,6 +27,11 @@ Goblin pb = new Goblin("pb");
 
 YoungRedDragon dw = new YoungRedDragon("Donkey's Wife");
 
-dw.Breath(testGob);
+testGob.ScimtiarAttack(dw);
+Console.WriteLine("Dragon's hp: " + dw.Health);
+Console.ReadLine();
+
+
+dw.Claw(testGob);
 Console.WriteLine("Goblin's hp: " + testGob.Health);
 Console.ReadLine();

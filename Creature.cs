@@ -105,7 +105,7 @@ namespace tableTop
             // ^^ Checks the in play roll when player has advantage
 
             int actualValue = initialValue + proficiencyBonus + toHitBonus;
-            Console.WriteLine("Plus  proficiency( " + proficiencyBonus + "): " + actualValue);
+            Console.WriteLine("Plus  proficiency and to hit bonus(" + proficiencyBonus + " + " + toHitBonus + "): " + actualValue);
 
 
             if ((valueToBeat < actualValue == true) && initialValue == 20)
@@ -124,43 +124,46 @@ namespace tableTop
         //{
         //    int checkResults = performCheck(target.ArmorClass, advantage);
         //    Weapon attackersWeapon = Weapon;
+        public virtual void runResult(int checkResults, int damageDealt, Creature target)
+        {
+            switch (checkResults)
+            {
+                case 0:
+                    Console.WriteLine("Miss");
+                    break;
 
-        //    switch (checkResults)
-        //    {
-        //        case 0:
-        //            Console.WriteLine("Miss");
-        //            break;
+                case 1:
+                    Console.WriteLine("Hit for " + damageDealt + " damage!");
+                    target.health -= damageDealt;
+                    break;
 
-        //        case 1:
-        //            Console.WriteLine("Hit");
-        //            target.health -= (attackersWeapon.rollForDamage());
-        //            break;
+                case 2:
+                    Console.WriteLine("Critical Hit! " + damageDealt + " damage!");
+                    target.health -= damageDealt * 2;
+                    break;
+            }
+        }
 
-        //        case 2:
-        //            Console.WriteLine("Critical Hit!");
-        //            target.health -= (attackersWeapon.rollForDamage()) * 2;
-        //            break;
-        //    }
-        //}
-
-
-        //public void DonArmor(Armor armor) 
-        //{
-        //    ArmorClass = armor.armorClass;
-        //}
-
-        //public void DoffArmor() 
-        //{
-        //    ArmorClass = 2;
-        //}
+    //}
 
 
-        //Level up method: Increase level by one,
-        // Increase health by a hit die and add CON modifier
-        //allow user to increase stats on ASI
+    //public void DonArmor(Armor armor) 
+    //{
+    //    ArmorClass = armor.armorClass;
+    //}
 
-        //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
-        public static void PrintCharacterSheet(Creature character) 
+    //public void DoffArmor() 
+    //{
+    //    ArmorClass = 2;
+    //}
+
+
+    //Level up method: Increase level by one,
+    // Increase health by a hit die and add CON modifier
+    //allow user to increase stats on ASI
+
+    //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
+    public static void PrintCharacterSheet(Creature character) 
         {
             Console.WriteLine("Name: " + character.name);
             Console.WriteLine("Languages: " + String.Join(", ", character.languages));

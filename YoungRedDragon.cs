@@ -35,23 +35,7 @@ namespace tableTop
         {
             int checkResults = performCheck(target.ArmorClass, 10, advantage);
             int damageDealt = (bite.rollForDamage() + 6) + 3;//+3 fire damage
-
-            switch (checkResults) // DRY: Consider making this a function, it should work with any attack
-            {
-                case 0:
-                    Console.WriteLine("Miss");
-                    break;
-
-                case 1:
-                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
-                    target.Health -= damageDealt;
-                    break;
-
-                case 2:
-                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
-                    target.Health -= damageDealt * 2;
-                    break;
-            }
+            runResult(checkResults, damageDealt, target);
         }
 
 
@@ -60,23 +44,7 @@ namespace tableTop
         {
             int checkResults = performCheck(target.ArmorClass, 10, advantage);
             int damageDealt = (claw.rollForDamage() + 6);
-
-            switch (checkResults) // DRY: Consider making this a function, it should work with any attack
-            {
-                case 0:
-                    Console.WriteLine("Miss");
-                    break;
-
-                case 1:
-                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
-                    target.Health -= damageDealt;
-                    break;
-
-                case 2:
-                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
-                    target.Health -= damageDealt * 2;
-                    break;
-            }
+            runResult(checkResults, damageDealt, target);
         }
 
         public virtual void Breath(Creature target, bool advantage = false)
@@ -92,24 +60,7 @@ namespace tableTop
             }
             else { damageDealt = breath.rollForDamage(); }
 
-                
-
-            switch (checkResults) // DRY: Consider making this a function, it should work with any attack
-            {
-                case 0:
-                    Console.WriteLine("Miss");
-                    break;
-
-                case 1:
-                    Console.WriteLine("Hit for: " + damageDealt + " damage!");
-                    target.Health -= damageDealt;
-                    break;
-
-                case 2:
-                    Console.WriteLine("Critical Hit!: " + (damageDealt * 2) + " damage dealt!");
-                    target.Health -= damageDealt * 2;
-                    break;
-            }
+            runResult(checkResults, damageDealt, target);
         }
     }
 }
