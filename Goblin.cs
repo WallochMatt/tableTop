@@ -27,9 +27,15 @@ namespace tableTop
             armorClass = 15;
             proficiencyBonus = 2;
             challengeRating = .25;
-            dexSave= 2;
 
-        }
+            strSaveProficiency = 0;
+            dexSaveProficiency = 0;
+            conSaveProficiency = 0;
+            intSaveProficiency = 0;
+            wisSaveProficiency = 0;
+            chaSaveProficiency = 0;
+
+    }
 
         public virtual void ScimtiarAttack(Creature target, bool advantage = false)
 

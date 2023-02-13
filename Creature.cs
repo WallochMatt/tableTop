@@ -9,9 +9,6 @@ namespace tableTop
     abstract class Creature
     {
 
-        public int dexSave;
-
-
         protected string name;
         public string Name
         {
@@ -83,6 +80,13 @@ namespace tableTop
             set { charisma = value; }
         }
 
+        public int strSaveProficiency;
+        public int dexSaveProficiency;
+        public int conSaveProficiency;
+        public int intSaveProficiency;
+        public int wisSaveProficiency;
+        public int chaSaveProficiency;
+
 
         //static method instead???
         public int performCheck(int valueToBeat, int toHitBonus = 0, bool advantage = false)
@@ -140,9 +144,10 @@ namespace tableTop
         }
 
         // Damage calculated in the respective attack method
-        public virtual int SavingThrow(int saveStat) 
+        public virtual int SavingThrow(int saveProficiency, int rawStat) 
         {
-            int saveStatus = saveStat + RandomNumberGenerator.Generate(20);
+            int saveModifier = GetAbilityModifier(rawStat);
+            int saveStatus = saveProficiency + saveModifier + RandomNumberGenerator.Generate(20);
             if (saveStatus > 17)
             {
                 return 2; //take half damage
@@ -150,7 +155,11 @@ namespace tableTop
             else { return 1; } //take full damage
         }
 
-
+        public virtual int GetAbilityModifier(int stat) 
+        { 
+            int statModifier = (stat - 10) / 2;
+            return statModifier;
+        }
 
 
 

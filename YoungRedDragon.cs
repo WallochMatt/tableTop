@@ -28,6 +28,13 @@ namespace tableTop
             proficiencyBonus = 4;
             challengeRating = 10;
 
+            strSaveProficiency = 0;
+            dexSaveProficiency = 4;
+            conSaveProficiency = 9;
+            intSaveProficiency = 0;
+            wisSaveProficiency = 4;
+            chaSaveProficiency = 8;
+
         }
 
         public virtual void Bite(Creature target, bool advantage = false)
@@ -50,7 +57,7 @@ namespace tableTop
         public virtual void Breath(Creature target, bool advantage = false)
 
         {
-            int savingThrowResult = SavingThrow(target.dexSave);
+            int savingThrowResult = SavingThrow(target.dexSaveProficiency, target.Dexterity);
             int damageDealt = breath.rollForDamage() / savingThrowResult;
             runResult(1, damageDealt, target);
         }
