@@ -19,7 +19,7 @@ namespace tableTop
             this.dieSize = dieSize;
         }   
 
-        public int rollForDamage()
+        public int RollForDamage()
         {
             int totalDamage = 0;
             for (int i = 0; i < diceCount; i++)

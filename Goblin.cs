@@ -40,18 +40,18 @@ namespace tableTop
         public virtual void ScimtiarAttack(Creature target, bool advantage = false)
 
         {
-            int checkResults = performCheck(target.ArmorClass, 4, advantage);
-            int damageDealt = (scimitar.rollForDamage() + 2);
-            runResult(checkResults, damageDealt, target);
+            int checkResults = PerformCheck(target.ArmorClass, 4, advantage);
+            int damageDealt = (scimitar.RollForDamage() + 2);
+            RunResult(checkResults, damageDealt, target);
         }
 
 
         public virtual void BowAttack(Creature target, bool advantage = false)
 
         {
-            int checkResults = performCheck(target.ArmorClass, 4, advantage);
-            int damageDealt = (shortbow.rollForDamage() + 2);
-            runResult(checkResults, damageDealt, target);
+            int checkResults = PerformCheck(target.ArmorClass, 4, advantage);
+            int damageDealt = (shortbow.RollForDamage() + 2);
+            RunResult(checkResults, damageDealt, target);
         }
 
     }

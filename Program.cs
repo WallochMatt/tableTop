@@ -10,7 +10,6 @@ Dice d8 = new Dice(8);
 Dice d10 = new Dice(10);
 Dice d12 = new Dice(12);
 
-
 //                          name, rolls, Dice
 Weapon club = new Weapon("Wooden Club", 1, 8);
 
@@ -19,19 +18,32 @@ Armor chainMail = new Armor("Chain Mail", 55, 16);
 Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex modifier
 
 
-MountainDwarf testDwarf = new MountainDwarf();
 
 
-Goblin testGob = new Goblin("test");
-Goblin pb = new Goblin("pb");
-
-YoungRedDragon dw = new YoungRedDragon("Donkey's Wife");
-
-testGob.ScimtiarAttack(dw);
-Console.WriteLine("Dragon's hp: " + dw.Health);
-Console.ReadLine();
 
 
-dw.Breath(testGob);
-Console.WriteLine("Goblin's hp: " + testGob.Health);
-Console.ReadLine();
+Race mountainDwarf = new Race("Mountain Dwarf", "medium", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"}, 2, 0, 2, 0, 0, 0);
+
+//                                           name,  str dex con int wis cha,    race,      weapon  armor
+Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, mountainDwarf, club, studLeath);
+
+
+Creature.PrintCharacterSheet(tetstAdventurer);
+
+
+
+
+
+//Goblin testGob = new Goblin("test");
+//Goblin pb = new Goblin("pb");
+
+//YoungRedDragon dw = new YoungRedDragon("Donkey's Wife");
+
+//testGob.ScimtiarAttack(dw);
+//Console.WriteLine("Dragon's hp: " + dw.Health);
+//Console.ReadLine();
+
+
+//dw.Breath(testGob);
+//Console.WriteLine("Goblin's hp: " + testGob.Health);
+//Console.ReadLine();

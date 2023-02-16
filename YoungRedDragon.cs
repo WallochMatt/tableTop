@@ -40,26 +40,26 @@ namespace tableTop
         public virtual void Bite(Creature target, bool advantage = false)
 
         {
-            int checkResults = performCheck(target.ArmorClass, 10, advantage);
-            int damageDealt = (bite.rollForDamage() + 6) + 3;//+3 fire damage
-            runResult(checkResults, damageDealt, target);
+            int checkResults = PerformCheck(target.ArmorClass, 10, advantage);
+            int damageDealt = (bite.RollForDamage() + 6) + 3;//+3 fire damage
+            RunResult(checkResults, damageDealt, target);
         }
 
 
         public virtual void Claw(Creature target, bool advantage = false)
 
         {
-            int checkResults = performCheck(target.ArmorClass, 10, advantage);
-            int damageDealt = (claw.rollForDamage() + 6);
-            runResult(checkResults, damageDealt, target);
+            int checkResults = PerformCheck(target.ArmorClass, 10, advantage);
+            int damageDealt = (claw.RollForDamage() + 6);
+            RunResult(checkResults, damageDealt, target);
         }
 
         public virtual void Breath(Creature target, bool advantage = false)
 
         {
             int savingThrowResult = SavingThrow(target.dexSaveProficiency, target.Dexterity);
-            int damageDealt = breath.rollForDamage() / savingThrowResult;
-            runResult(1, damageDealt, target);
+            int damageDealt = breath.RollForDamage() / savingThrowResult;
+            RunResult(1, damageDealt, target);
         }
     }
 }

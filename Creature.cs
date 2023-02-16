@@ -89,7 +89,7 @@ namespace tableTop
 
 
         //static method instead???
-        public int performCheck(int valueToBeat, int toHitBonus = 0, bool advantage = false)
+        public int PerformCheck(int valueToBeat, int toHitBonus = 0, bool advantage = false)
         {
 
             int initialValue = RandomNumberGenerator.Generate(20);
@@ -123,7 +123,7 @@ namespace tableTop
             else return 0;
         }
 
-        public virtual void runResult(int checkResults, int damageDealt, Creature target)
+        public virtual void RunResult(int checkResults, int damageDealt, Creature target)
         {
             switch (checkResults)
             {
@@ -147,7 +147,7 @@ namespace tableTop
         public virtual int SavingThrow(int saveProficiency, int rawStat) 
         {
             int saveModifier = GetAbilityModifier(rawStat);
-            int saveStatus = saveProficiency + saveModifier + RandomNumberGenerator.Generate(20);
+             int saveStatus = saveProficiency + saveModifier + RandomNumberGenerator.Generate(20);
             if (saveStatus > 17)
             {
                 return 2; //take half damage
