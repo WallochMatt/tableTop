@@ -35,6 +35,8 @@ Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, acol
 
 Goblin testGob = new Goblin("test");
 
+tetstAdventurer.DonArmor(chainMail);
+
 Creature.PrintCharacterSheet(testGob);
 
 

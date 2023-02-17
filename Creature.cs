@@ -163,16 +163,6 @@ namespace tableTop
 
 
 
-    //public void DonArmor(Armor armor) 
-    //{
-    //    ArmorClass = armor.armorClass;
-    //}
-
-    //public void DoffArmor() 
-    //{
-    //    ArmorClass = 2;
-    //}
-
 
     //Level up method: Increase level by one,
     // Increase health by a hit die and add CON modifier
@@ -181,9 +171,15 @@ namespace tableTop
     //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
     public static void PrintCharacterSheet(Creature character) 
         {
-            Console.WriteLine();
-
             Console.WriteLine("Name: " + character.name);
+
+            if (character is Adventurer)
+            {
+                ;
+            }
+           
+
+            
             Console.WriteLine("Languages: " + String.Join(", ", character.languages));
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);

@@ -45,5 +45,6 @@ namespace tableTop
             this.wisBonus = wisBonus;
             this.chaBonus = chaBonus;
         }
+        //Could do a switch case for the tools. Races get the list of tools and a character gets the one of their choosing
     }
 }

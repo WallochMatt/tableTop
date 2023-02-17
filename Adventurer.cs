@@ -13,16 +13,21 @@ namespace tableTop
         protected Weapon weapon;
 
         protected Armor armor;
+        public Armor Armor
+        {
+            get { return armor; }
+            set { armor = value; }
+        }
 
         protected Background background;
 
         protected Vocation vocation;
 
 
-        public Adventurer(string name, int str, int dex, int con, int intl, int wis, int cha, Background background, Race race, Weapon weapon, Armor armor, Vocation vocation) 
+        public Adventurer(string name, int str, int dex, int con, int intl, int wis, int cha, Background background, Race race, Weapon weapon, Armor armor, Vocation vocation)
         {
             this.name = name;
-            proficiencyBonus= 2; //plus level
+            proficiencyBonus = 2; //plus level
             Strength = str + race.strBonus;
             Dexterity = dex + race.dexBonus;
             Constitution = con + race.conBonus;
@@ -34,7 +39,7 @@ namespace tableTop
 
             this.background = background;
             this.vocation = vocation;
-            this.race = race;   
+            this.race = race;
             this.weapon = weapon;
             this.armor = armor;
             armorClass = armor.armorClass;
@@ -44,9 +49,9 @@ namespace tableTop
             AddSave(vocation.statSaveBonus1);
             AddSave(vocation.statSaveBonus2);
         }
-        
 
-        private void AddSave(string saveBonus) 
+
+        private void AddSave(string saveBonus)
         {
             switch (saveBonus)
             {
@@ -74,6 +79,27 @@ namespace tableTop
                     chaSaveProficiency += proficiencyBonus;
                     break;
             }
-        } 
+
+
+        }
+
+        public void DonArmor(Armor newArmor)
+        {
+            Armor = newArmor;
+            ArmorClass = newArmor.armorClass;
+        }
+
+
+        public static void PrintAdventurerInfo(Adventurer adventurer)
+        {
+            Console.WriteLine("1");
+            Console.WriteLine("2");
+        }
+
+        //public void DoffArmor()
+        //{
+        //    Armor = 
+        //    ArmorClass = 2;
+        //}
     }
 }
