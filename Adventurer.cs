@@ -18,7 +18,7 @@ namespace tableTop
         protected Armor armor;
 
 
-        public Adventurer(string name, int str, int dex, int con, int intl, int wis, int cha, Race race, Weapon weapon, Armor armor, Vocation vocation) 
+        public Adventurer(string name, int str, int dex, int con, int intl, int wis, int cha, Background background, Race race, Weapon weapon, Armor armor, Vocation vocation) 
         {
             this.name = name;
             proficiencyBonus= 2;
@@ -36,6 +36,7 @@ namespace tableTop
             this.armor = armor;
             armorClass = armor.armorClass;
             Languages.AddRange(race.raceLanguages);
+            Languages.AddRange(background.backgroundLanguages);
             AddSaves(vocation.statSaveBonus1, vocation.statSaveBonus2);
 
         }

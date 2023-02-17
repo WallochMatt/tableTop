@@ -24,8 +24,11 @@ Vocation fighter = new Vocation(10, "Strength", "Constitution");
 
 Race mountainDwarf = new Race("Mountain Dwarf", "medium", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"}, 2, 0, 2, 0, 0, 0);
 
-//                                           name,  str dex con int wis cha,    race,      weapon  armor
-Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, mountainDwarf, club, studLeath, fighter);
+Background acolyte = new Background("Acolyte", new List<string> { "Draconic", "Deep Speech" });
+
+
+//                                           name,  str dex con int wis cha,background     race,    weapon  armor     vocation
+Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, acolyte,  mountainDwarf, club, studLeath, fighter);
 
 
 Creature.PrintCharacterSheet(tetstAdventurer);
