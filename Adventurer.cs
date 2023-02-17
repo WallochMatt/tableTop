@@ -8,20 +8,21 @@ namespace tableTop
 {
     internal class Adventurer : Creature
     {
-        //protected string name;
-
-
         protected Race race;
 
         protected Weapon weapon;
 
         protected Armor armor;
 
+        protected Background background;
+
+        protected Vocation vocation;
+
 
         public Adventurer(string name, int str, int dex, int con, int intl, int wis, int cha, Background background, Race race, Weapon weapon, Armor armor, Vocation vocation) 
         {
             this.name = name;
-            proficiencyBonus= 2;
+            proficiencyBonus= 2; //plus level
             Strength = str + race.strBonus;
             Dexterity = dex + race.dexBonus;
             Constitution = con + race.conBonus;
@@ -31,46 +32,23 @@ namespace tableTop
 
             Health = vocation.startingHealth + GetAbilityModifier(Constitution);
 
+            this.background = background;
+            this.vocation = vocation;
             this.race = race;   
             this.weapon = weapon;
             this.armor = armor;
             armorClass = armor.armorClass;
+
             Languages.AddRange(race.raceLanguages);
             Languages.AddRange(background.backgroundLanguages);
-            AddSaves(vocation.statSaveBonus1, vocation.statSaveBonus2);
-
+            AddSave(vocation.statSaveBonus1);
+            AddSave(vocation.statSaveBonus2);
         }
+        
 
-        private void AddSaves(string saveBonus1, string saveBonus2) 
+        private void AddSave(string saveBonus) 
         {
-            switch (saveBonus1)
-            {
-                case "Strength":
-                    strSaveProficiency += proficiencyBonus;
-                    break;
-
-                case "Dexterity":
-                    dexSaveProficiency += proficiencyBonus;
-                    break;
-
-                case "Constitution":
-                    conSaveProficiency += proficiencyBonus;
-                    break;
-
-                case "Intelligence":
-                    intSaveProficiency += proficiencyBonus;
-                    break;
-
-                case "Wisdom":
-                    wisSaveProficiency += proficiencyBonus;
-                    break;
-
-                case "Charisma":
-                    chaSaveProficiency += proficiencyBonus;
-                    break;
-            }
-
-            switch (saveBonus2)
+            switch (saveBonus)
             {
                 case "Strength":
                     strSaveProficiency += proficiencyBonus;

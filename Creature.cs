@@ -188,12 +188,12 @@ namespace tableTop
             Console.WriteLine("Health: " + character.health);
             Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);
             Console.WriteLine("AC: " + character.ArmorClass);
-            Console.WriteLine("Strength: " + character.strength);
-            Console.WriteLine("Dexterity: " + character.dexterity);
-            Console.WriteLine("Constitution: " + character.constitution);
-            Console.WriteLine("Intelligence: " + character.intelligence);
-            Console.WriteLine("Wisdom: " + character.wisdom);
-            Console.WriteLine("Charisma: " + character.charisma);
+            Console.WriteLine("Strength: " + character.strength + "(" + character.GetAbilityModifier(character.Strength) + ")");
+            Console.WriteLine("Dexterity: " + character.dexterity + "(" + character.GetAbilityModifier(character.Dexterity) + ")");
+            Console.WriteLine("Constitution: " + character.constitution + "(" + character.GetAbilityModifier(character.Constitution) + ")");
+            Console.WriteLine("Intelligence: " + character.intelligence + "(" + character.GetAbilityModifier(character.Intelligence) + ")");
+            Console.WriteLine("Wisdom: " + character.wisdom + "(" + character.GetAbilityModifier(character.Wisdom) + ")");
+            Console.WriteLine("Charisma: " + character.charisma + "(" + character.GetAbilityModifier(character.Charisma) + ")");
 
             Console.WriteLine(
                 "Saves: " + "\n" +

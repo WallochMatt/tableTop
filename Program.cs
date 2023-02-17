@@ -31,13 +31,14 @@ Background acolyte = new Background("Acolyte", new List<string> { "Draconic", "D
 Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, acolyte,  mountainDwarf, club, studLeath, fighter);
 
 
-Creature.PrintCharacterSheet(tetstAdventurer);
+
+
+Goblin testGob = new Goblin("test");
+
+Creature.PrintCharacterSheet(testGob);
 
 
 
-
-
-//Goblin testGob = new Goblin("test");
 //Goblin pb = new Goblin("pb");
 
 //YoungRedDragon dw = new YoungRedDragon("Donkey's Wife");
