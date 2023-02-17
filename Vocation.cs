@@ -8,21 +8,16 @@ namespace tableTop
 {
     internal class Vocation
     {
-        public int strVocSaveProficiency;
-        public int dexVocSaveProficiency;
-        public int conVocSaveProficiency;
-        public int intVocSaveProficiency;
-        public int wisVocSaveProficiency;
-        public int chaVocSaveProficiency;
+        public int startingHealth;
+        public string statSaveBonus1;
+        public string statSaveBonus2;
+        
 
-        public Vocation(int strVocSaveProficiency, int dexVocSaveProficiency, int conVocSaveProficiency, int intVocSaveProficiency, int wisVocSaveProficiency, int chaVocSaveProficiency)
-        { 
-            this.strVocSaveProficiency= strVocSaveProficiency;
-            this.dexVocSaveProficiency = dexVocSaveProficiency;
-            this.conVocSaveProficiency = conVocSaveProficiency;
-            this.intVocSaveProficiency = intVocSaveProficiency;
-            this.wisVocSaveProficiency = wisVocSaveProficiency;
-            this.chaVocSaveProficiency = chaVocSaveProficiency;
+        public Vocation(int startingHealth, string statSaveBonus1, string statSaveBonus2)
+        {
+            this.startingHealth = startingHealth;
+            this.statSaveBonus1 = statSaveBonus1;
+            this.statSaveBonus2 = statSaveBonus2;   
         }   
     }
 }

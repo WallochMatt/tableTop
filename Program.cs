@@ -19,13 +19,13 @@ Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex
 
 
 
-
+Vocation fighter = new Vocation(10, "Strength", "Constitution");
 
 
 Race mountainDwarf = new Race("Mountain Dwarf", "medium", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"}, 2, 0, 2, 0, 0, 0);
 
 //                                           name,  str dex con int wis cha,    race,      weapon  armor
-Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, mountainDwarf, club, studLeath);
+Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, mountainDwarf, club, studLeath, fighter);
 
 
 Creature.PrintCharacterSheet(tetstAdventurer);

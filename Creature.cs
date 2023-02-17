@@ -181,6 +181,8 @@ namespace tableTop
     //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
     public static void PrintCharacterSheet(Creature character) 
         {
+            Console.WriteLine();
+
             Console.WriteLine("Name: " + character.name);
             Console.WriteLine("Languages: " + String.Join(", ", character.languages));
             Console.WriteLine("Health: " + character.health);
@@ -192,6 +194,17 @@ namespace tableTop
             Console.WriteLine("Intelligence: " + character.intelligence);
             Console.WriteLine("Wisdom: " + character.wisdom);
             Console.WriteLine("Charisma: " + character.charisma);
+
+            Console.WriteLine(
+                "Saves: " + "\n" +
+                "\tStrength Save: " + (character.strSaveProficiency + character.GetAbilityModifier(character.Strength)) + "\n" +
+                "\tDexterity Save: " + (character.dexSaveProficiency + character.GetAbilityModifier(character.Dexterity)) + "\n" +
+                "\tConstitutuin Save: " + (character.conSaveProficiency + character.GetAbilityModifier(character.Constitution)) +  "\n" +
+                "\tIntelligence Save: " + (character.intSaveProficiency + character.GetAbilityModifier(character.Intelligence)) + "\n" +
+                "\tWisdom Save: " + (character.wisSaveProficiency + character.GetAbilityModifier(character.Wisdom)) + "\n" +
+                "\tCharisma Save: " + (character.chaSaveProficiency + character.GetAbilityModifier(character.Charisma))
+            );
+
         }
 
     }
