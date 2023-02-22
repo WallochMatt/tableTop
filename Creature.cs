@@ -169,36 +169,31 @@ namespace tableTop
     //allow user to increase stats on ASI
 
     //Could maybe use static classes for DND Classes, using methods on level ups to grant the features 
-    public static void PrintCharacterSheet(Creature character) 
+    public virtual void PrintCharacterSheet() 
         {
-            Console.WriteLine("Name: " + character.name);
-
-            if (character is Adventurer)
-            {
-                ;
-            }
+            Console.WriteLine("Name: " + name);
            
 
             
-            Console.WriteLine("Languages: " + String.Join(", ", character.languages));
-            Console.WriteLine("Health: " + character.health);
-            Console.WriteLine("Proficiency Bonus: " + character.proficiencyBonus);
-            Console.WriteLine("AC: " + character.ArmorClass);
-            Console.WriteLine("Strength: " + character.strength + "(" + character.GetAbilityModifier(character.Strength) + ")");
-            Console.WriteLine("Dexterity: " + character.dexterity + "(" + character.GetAbilityModifier(character.Dexterity) + ")");
-            Console.WriteLine("Constitution: " + character.constitution + "(" + character.GetAbilityModifier(character.Constitution) + ")");
-            Console.WriteLine("Intelligence: " + character.intelligence + "(" + character.GetAbilityModifier(character.Intelligence) + ")");
-            Console.WriteLine("Wisdom: " + character.wisdom + "(" + character.GetAbilityModifier(character.Wisdom) + ")");
-            Console.WriteLine("Charisma: " + character.charisma + "(" + character.GetAbilityModifier(character.Charisma) + ")");
+            Console.WriteLine("Languages: " + String.Join(", ", languages));
+            Console.WriteLine("Health: " + health);
+            Console.WriteLine("Proficiency Bonus: " + proficiencyBonus);
+            Console.WriteLine("AC: " + ArmorClass);
+            Console.WriteLine("Strength: " + strength + "(" + GetAbilityModifier(Strength) + ")");
+            Console.WriteLine("Dexterity: " + dexterity + "(" + GetAbilityModifier(Dexterity) + ")");
+            Console.WriteLine("Constitution: " + constitution + "(" + GetAbilityModifier(Constitution) + ")");
+            Console.WriteLine("Intelligence: " + intelligence + "(" + GetAbilityModifier(Intelligence) + ")");
+            Console.WriteLine("Wisdom: " + wisdom + "(" + GetAbilityModifier(Wisdom) + ")");
+            Console.WriteLine("Charisma: " + charisma + "(" + GetAbilityModifier(Charisma) + ")");
 
             Console.WriteLine(
                 "Saves: " + "\n" +
-                "\tStrength Save: " + (character.strSaveProficiency + character.GetAbilityModifier(character.Strength)) + "\n" +
-                "\tDexterity Save: " + (character.dexSaveProficiency + character.GetAbilityModifier(character.Dexterity)) + "\n" +
-                "\tConstitutuin Save: " + (character.conSaveProficiency + character.GetAbilityModifier(character.Constitution)) +  "\n" +
-                "\tIntelligence Save: " + (character.intSaveProficiency + character.GetAbilityModifier(character.Intelligence)) + "\n" +
-                "\tWisdom Save: " + (character.wisSaveProficiency + character.GetAbilityModifier(character.Wisdom)) + "\n" +
-                "\tCharisma Save: " + (character.chaSaveProficiency + character.GetAbilityModifier(character.Charisma))
+                "\tStrength Save: " + (strSaveProficiency + GetAbilityModifier(Strength)) + "\n" +
+                "\tDexterity Save: " + (dexSaveProficiency + GetAbilityModifier(Dexterity)) + "\n" +
+                "\tConstitutuin Save: " + (conSaveProficiency + GetAbilityModifier(Constitution)) +  "\n" +
+                "\tIntelligence Save: " + (intSaveProficiency + GetAbilityModifier(Intelligence)) + "\n" +
+                "\tWisdom Save: " + (wisSaveProficiency + GetAbilityModifier(Wisdom)) + "\n" +
+                "\tCharisma Save: " + (chaSaveProficiency + GetAbilityModifier(Charisma))
             );
 
         }

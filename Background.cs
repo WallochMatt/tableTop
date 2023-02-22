@@ -9,6 +9,11 @@ namespace tableTop
     internal class Background
     {
         private string title;
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
+        }
         //skill proficiencies
         public List<string> backgroundLanguages;
         //equipment

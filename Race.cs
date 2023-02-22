@@ -11,6 +11,11 @@ namespace tableTop
     {
         //Still need to figure out how to add the bonus stats of a Race to a Creature
         protected string nameOfRace;
+        public string NameOfRace
+        {
+            get { return nameOfRace; }
+            set { nameOfRace = value; }
+        }
 
         protected string size;
         

@@ -101,5 +101,37 @@ namespace tableTop
         //    Armor = 
         //    ArmorClass = 2;
         //}
+
+
+        public override void PrintCharacterSheet()
+        {
+            Console.WriteLine("Name: " + name);
+
+            Console.WriteLine("Race: " + race.NameOfRace);
+            Console.WriteLine("Vocation: " + vocation.nameOfVocation);
+            Console.WriteLine("Bacground: " + background.Title);
+
+            Console.WriteLine("Languages: " + String.Join(", ", languages));
+            Console.WriteLine("Health: " + health);
+            Console.WriteLine("Proficiency Bonus: " + proficiencyBonus);
+            Console.WriteLine("AC: " + ArmorClass);
+            Console.WriteLine("Strength: " + strength + "(" + GetAbilityModifier(Strength) + ")");
+            Console.WriteLine("Dexterity: " + dexterity + "(" + GetAbilityModifier(Dexterity) + ")");
+            Console.WriteLine("Constitution: " + constitution + "(" + GetAbilityModifier(Constitution) + ")");
+            Console.WriteLine("Intelligence: " + intelligence + "(" + GetAbilityModifier(Intelligence) + ")");
+            Console.WriteLine("Wisdom: " + wisdom + "(" + GetAbilityModifier(Wisdom) + ")");
+            Console.WriteLine("Charisma: " + charisma + "(" + GetAbilityModifier(Charisma) + ")");
+
+            Console.WriteLine(
+                "Saves: " + "\n" +
+                "\tStrength Save: " + (strSaveProficiency + GetAbilityModifier(Strength)) + "\n" +
+                "\tDexterity Save: " + (dexSaveProficiency + GetAbilityModifier(Dexterity)) + "\n" +
+                "\tConstitutuin Save: " + (conSaveProficiency + GetAbilityModifier(Constitution)) + "\n" +
+                "\tIntelligence Save: " + (intSaveProficiency + GetAbilityModifier(Intelligence)) + "\n" +
+                "\tWisdom Save: " + (wisSaveProficiency + GetAbilityModifier(Wisdom)) + "\n" +
+                "\tCharisma Save: " + (chaSaveProficiency + GetAbilityModifier(Charisma))
+                );
+               
+            }
     }
 }

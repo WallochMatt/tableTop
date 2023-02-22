@@ -19,7 +19,7 @@ Armor studLeath = new Armor("Studded Leather", 13, 12); // Figure how to add dex
 
 
 
-Vocation fighter = new Vocation(10, "Strength", "Constitution");
+Vocation fighter = new Vocation("Fighter", 10, "Strength", "Constitution");
 
 
 Race mountainDwarf = new Race("Mountain Dwarf", "medium", 25, true, "Artisan's Tools", new List<string> {"Common", "Dwarvish"}, 2, 0, 2, 0, 0, 0);
@@ -33,11 +33,13 @@ Adventurer tetstAdventurer = new Adventurer("Krok", 14, 10, 14, 10, 12, 13, acol
 
 
 
-Goblin testGob = new Goblin("test");
+Goblin testGob = new Goblin("Gremmy");
 
 tetstAdventurer.DonArmor(chainMail);
 
-Creature.PrintCharacterSheet(testGob);
+testGob.PrintCharacterSheet();
+Console.WriteLine("\n");
+tetstAdventurer.PrintCharacterSheet();
 
 
 
